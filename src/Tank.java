@@ -5,6 +5,7 @@ public class Tank {
     private int x, y;
     private Dir dir;
     private boolean bL, bR, bU, bD;
+    private boolean moving = false;
 
     public static final int SPEED = 5;
 
@@ -40,21 +41,28 @@ public class Tank {
     }
 
     private void setMainDir() {
+        //当按键没有被按下时停止，按键被按下时移动
         if (!bL && !bR && !bU && !bD) {
-            dir = Dir.STOP;
-        } else if (bL && !bR && !bU && !bD) {
-            dir = Dir.L;
-        } else if (!bL && bR && !bU && !bD) {
-            dir = Dir.R;
-        } else if (!bL && !bR && bU && !bD) {
-            dir = Dir.U;
-        } else if (!bL && !bR && !bU && bD) {
-            dir = Dir.D;
+            moving = false;
+        } else {
+            moving = true;
+            if (bL && !bR && !bU && !bD) {
+                dir = Dir.L;
+            } else if (!bL && bR && !bU && !bD) {
+                dir = Dir.R;
+            } else if (!bL && !bR && bU && !bD) {
+                dir = Dir.U;
+            } else if (!bL && !bR && !bU && bD) {
+                dir = Dir.D;
+            }
         }
 
     }
 
     private void move() {
+        if (!moving) {
+            return;
+        }
         switch (dir) {
             case L:
                 x -= SPEED;
