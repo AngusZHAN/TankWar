@@ -2,53 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f9b80f1-d9d3-4251-9e4a-32d8a50cd283" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/BadTank1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/BadTank2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/GoodTank1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/GoodTank2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletL.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletR.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileLD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileLU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileRD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileRU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/ImageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/ImageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TankWar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TankWar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Dir.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/Dir.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/Tank$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/Tank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Dir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/ImageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/ImageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Tank$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/Tank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/TankFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/TankFrame$TankKeyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/TankFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Dir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ImageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ImageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +62,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JUnit.ImageTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="com.zfree.tank.Main" />
       <module name="TankWar" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ImageTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ImageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -143,6 +112,7 @@
       <workItem from="1586929941950" duration="5804000" />
       <workItem from="1587003827358" duration="34000" />
       <workItem from="1587017889153" duration="3250000" />
+      <workItem from="1587189965073" duration="3369000" />
     </task>
     <servers />
   </component>
@@ -161,25 +131,25 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="605" y="141" key="#com.intellij.ide.util.MemberChooser/62.0.1474.864@62.0.1474.864" timestamp="1586848205112" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1587021144941">
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1587193336281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587021144941" />
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587193336281" />
     <state width="1431" height="277" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1587021144941">
+    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1587193336281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587021144941" />
+    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587193336281" />
     <state width="1431" height="277" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1587021144941">
+    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1587193336280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587021144941" />
+    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587193336280" />
     <state width="1431" height="277" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1586935820124" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1587021144941">
+    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1587193336281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587021144941" />
+    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587193336281" />
     <state width="1431" height="277" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
     <state width="1431" height="277" key="GridCell.Tab.1.bottom" timestamp="1586935820125">
       <screen x="62" y="0" width="1474" height="864" />
@@ -201,10 +171,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="262" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587019456132" />
-    <state x="428" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1587017894720">
+    <state x="428" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1587190335846">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="428" y="244" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587017894720" />
+    <state x="428" y="244" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587190335846" />
     <state x="473" y="256" key="com.intellij.ide.util.TipDialog/62.0.1474.864@62.0.1474.864" timestamp="1586929946935" />
     <state x="485" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1587020281305">
       <screen x="0" y="0" width="1536" height="824" />

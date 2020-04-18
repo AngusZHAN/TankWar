@@ -1,3 +1,5 @@
+package com.zfree.tank;
+
 public class Main {
     public static void main(String[] args) {
         TankFrame tf = new TankFrame();
