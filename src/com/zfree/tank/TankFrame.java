@@ -3,22 +3,30 @@ package com.zfree.tank;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TankFrame extends Frame {
+    public static final TankFrame INSTANCE = new TankFrame();
+
     private Tank myTank;
     private Tank enemy;
 
+    private List<Bullet> bullets;
+
     public static final int GAME_WIDTH = 1000, GAME_HEIGHT = 800;
 
-    public TankFrame() {
+    private TankFrame() {
         this.setTitle("com.zfree.tank.Tank War");
         this.setLocation(400, 100);
         this.setSize(GAME_WIDTH, GAME_HEIGHT);
 
         this.addKeyListener(new TankKeyListener());
 
-        myTank = new Tank(800, 600, Dir.U);
-        enemy = new Tank(100, 100, Dir.D);
+        myTank = new Tank(800, 600, Dir.U, Group.Good);
+        enemy = new Tank(100, 100, Dir.D, Group.Bad);
+
+        bullets = new ArrayList<>();
     }
 
     Image offScreenImage = null;
@@ -41,6 +49,14 @@ public class TankFrame extends Frame {
     public void paint(Graphics g) {
        myTank.paint(g);
        enemy.paint(g);
+
+       for (int i=0; i < bullets.size(); i++) {
+           bullets.get(i).paint(g);
+       }
+    }
+
+    public void add(Bullet bullet) {
+        this.bullets.add(bullet);
     }
 
     private class TankKeyListener extends KeyAdapter {

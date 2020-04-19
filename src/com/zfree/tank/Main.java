@@ -2,9 +2,7 @@ package com.zfree.tank;
 
 public class Main {
     public static void main(String[] args) {
-        TankFrame tf = new TankFrame();
-
-        tf.setVisible(true);
+        TankFrame.INSTANCE.setVisible(true);
 
         for (; ;) {
             try {
@@ -12,7 +10,7 @@ public class Main {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            tf.repaint();
+            TankFrame.INSTANCE.repaint();
         }
     }
 }
