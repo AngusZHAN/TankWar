@@ -4,13 +4,13 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Tank {
+    public static final int SPEED = 5;
     private int x, y;
     private Dir dir;
     private Group group;
     private boolean bL, bR, bU, bD;
     private boolean moving = false;
-
-    public static final int SPEED = 5;
+    private boolean live = true;
 
     public Tank(int x, int y, Dir dir, Group group) {
         this.x = x;
@@ -19,8 +19,33 @@ public class Tank {
         this.group = group;
     }
 
+    public boolean isLive() {
+        return live;
+    }
+
+    public void setLive(boolean live) {
+        this.live = live;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
 
     public void paint(Graphics g) {
+        if (!this.isLive()) { return; }
+
         if (this.group == Group.Good) {
             switch (dir) {
                 case L:
@@ -139,6 +164,12 @@ public class Tank {
     }
 
     private void fire() {
-        TankFrame.INSTANCE.add(new Bullet(x, y, dir, group));
+        int bx = x + ResourceMgr.badTankU.getWidth() / 2 - ResourceMgr.bulletU.getWidth() / 2;
+        int by = y + ResourceMgr.badTankU.getHeight() / 2 - ResourceMgr.bulletU.getHeight() / 2;
+        TankFrame.INSTANCE.add(new Bullet(bx, by, dir, group));
+    }
+
+    public void die() {
+        this.setLive(false);
     }
 }

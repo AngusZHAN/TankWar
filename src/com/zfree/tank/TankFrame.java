@@ -47,12 +47,17 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
-       myTank.paint(g);
-       enemy.paint(g);
+        myTank.paint(g);
+        enemy.paint(g);
 
-       for (int i=0; i < bullets.size(); i++) {
-           bullets.get(i).paint(g);
-       }
+        for (int i = 0; i < bullets.size(); i++) {
+            bullets.get(i).collidesWithTank(enemy);
+            if (!bullets.get(i).isLive()) {
+                bullets.remove(i);
+            } else {
+                bullets.get(i).paint(g);
+            }
+        }
     }
 
     public void add(Bullet bullet) {
