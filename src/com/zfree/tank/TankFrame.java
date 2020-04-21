@@ -9,9 +9,9 @@ import java.util.List;
 public class TankFrame extends Frame {
     public static final TankFrame INSTANCE = new TankFrame();
 
-    private Tank myTank;
-    private Tank enemy;
+    private Player myTank;
 
+    private List<Tank> enemies;
     private List<Bullet> bullets;
 
     public static final int GAME_WIDTH = 1000, GAME_HEIGHT = 800;
@@ -23,10 +23,18 @@ public class TankFrame extends Frame {
 
         this.addKeyListener(new TankKeyListener());
 
-        myTank = new Tank(800, 600, Dir.U, Group.Good);
-        enemy = new Tank(100, 100, Dir.D, Group.Bad);
+        initGameObjects();
+    }
 
+    private void initGameObjects() {
+        myTank = new Player(800, 600, Dir.U, Group.Good);
+
+        enemies = new ArrayList<>();
         bullets = new ArrayList<>();
+
+        for (int i = 0; i < 7; i++) {
+            enemies.add(new Tank(100 + 30 * i, 200, Dir.D, Group.Bad));
+        }
     }
 
     Image offScreenImage = null;
@@ -47,11 +55,25 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
+        Color c = g.getColor();
+        g.setColor(Color.WHITE);
+        g.drawString("enemies:" + enemies.size(), 10, 50);
+        g.drawString("bullets:" + bullets.size(), 10, 70);
+        g.setColor(c);
+
         myTank.paint(g);
-        enemy.paint(g);
+        for (int i = 0; i < enemies.size(); i++) {
+            if (!enemies.get(i).isLive()) {
+                enemies.remove(i);
+            } else {
+                enemies.get(i).paint(g);
+            }
+        }
 
         for (int i = 0; i < bullets.size(); i++) {
-            bullets.get(i).collidesWithTank(enemy);
+            for (int j = 0; j < enemies.size(); j++) {
+                bullets.get(i).collidesWithTank(enemies.get(j));
+            }
             if (!bullets.get(i).isLive()) {
                 bullets.remove(i);
             } else {
