@@ -13,6 +13,7 @@ public class TankFrame extends Frame {
 
     private List<Tank> enemies;
     private List<Bullet> bullets;
+    private List<Explode> explodes;
 
     public static final int GAME_WIDTH = 1000, GAME_HEIGHT = 800;
 
@@ -31,6 +32,7 @@ public class TankFrame extends Frame {
 
         enemies = new ArrayList<>();
         bullets = new ArrayList<>();
+        explodes = new ArrayList<>();
 
         for (int i = 0; i < 7; i++) {
             enemies.add(new Tank(100 + 30 * i, 200, Dir.D, Group.Bad));
@@ -80,10 +82,22 @@ public class TankFrame extends Frame {
                 bullets.get(i).paint(g);
             }
         }
+
+        for (int i = 0; i < explodes.size(); i++) {
+            if (!explodes.get(i).isLive()) {
+                explodes.remove(i);
+            } else {
+                explodes.get(i).paint(g);
+            }
+        }
     }
 
     public void add(Bullet bullet) {
         this.bullets.add(bullet);
+    }
+
+    public void add(Explode explode) {
+        this.explodes.add(explode);
     }
 
     private class TankKeyListener extends KeyAdapter {
