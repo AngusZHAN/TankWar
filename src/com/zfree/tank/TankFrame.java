@@ -8,14 +8,13 @@ import java.util.List;
 
 public class TankFrame extends Frame {
     public static final TankFrame INSTANCE = new TankFrame();
-
+    public static final int GAME_WIDTH = 1000;
+    public static final int GAME_HEIGHT = 800;
+    Image offScreenImage = null;
     private Player myTank;
-
     private List<Tank> enemies;
     private List<Bullet> bullets;
     private List<Explode> explodes;
-
-    public static final int GAME_WIDTH = 1000, GAME_HEIGHT = 800;
 
     private TankFrame() {
         this.setTitle("com.zfree.tank.Tank War");
@@ -34,12 +33,11 @@ public class TankFrame extends Frame {
         bullets = new ArrayList<>();
         explodes = new ArrayList<>();
 
-        for (int i = 0; i < 7; i++) {
+        int tankCount = Integer.parseInt(PropertyMgr.get("initTankCount"));
+        for (int i = 0; i < tankCount; i++) {
             enemies.add(new Tank(100 + 30 * i, 200, Dir.D, Group.Bad));
         }
     }
-
-    Image offScreenImage = null;
 
     @Override
     public void update(Graphics g) {
@@ -96,9 +94,7 @@ public class TankFrame extends Frame {
         this.bullets.add(bullet);
     }
 
-    public void add(Explode explode) {
-        this.explodes.add(explode);
-    }
+    public void add(Explode explode) { this.explodes.add(explode); }
 
     private class TankKeyListener extends KeyAdapter {
 
