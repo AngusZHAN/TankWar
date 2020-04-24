@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f9b80f1-d9d3-4251-9e4a-32d8a50cd283" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/PropertyMgr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/strategy/DefualtFireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/strategy/FireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/strategy/FourDirFireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/strategy/TwoDirFireStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TankWar/config" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -119,7 +124,7 @@
       <workItem from="1587362692735" duration="4113000" />
       <workItem from="1587448879389" duration="4696000" />
       <workItem from="1587622071712" duration="2882000" />
-      <workItem from="1587706235502" duration="3113000" />
+      <workItem from="1587706235502" duration="4963000" />
     </task>
     <servers />
   </component>
@@ -142,30 +147,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="502" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1587707282425" />
-    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1587623586788">
+    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1587711453281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587623586788" />
+    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587711453281" />
     <state x="605" y="141" key="#com.intellij.ide.util.MemberChooser/62.0.1474.864@62.0.1474.864" timestamp="1586848205112" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1587709163042">
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1587712180798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587709163042" />
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587712180798" />
     <state width="1431" height="277" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1587709163042">
+    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1587712180798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587709163042" />
+    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587712180798" />
     <state width="1431" height="277" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1587709163042">
+    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1587712180798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587709163042" />
+    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587712180798" />
     <state width="1431" height="277" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1586935820124" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1587709163042">
+    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1587712180798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587709163042" />
+    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587712180798" />
     <state width="1431" height="277" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
     <state width="1431" height="277" key="GridCell.Tab.1.bottom" timestamp="1586935820125">
       <screen x="62" y="0" width="1474" height="864" />

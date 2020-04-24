@@ -1,5 +1,9 @@
 package com.zfree.tank;
 
+import com.zfree.tank.strategy.FireStrategy;
+import com.zfree.tank.strategy.FourDirFireStrategy;
+import com.zfree.tank.strategy.TwoDirFireStrategy;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -16,6 +20,22 @@ public class Player {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.group = group;
+    }
+
+    public Dir getDir() {
+        return dir;
+    }
+
+    public void setDir(Dir dir) {
+        this.dir = dir;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
         this.group = group;
     }
 
@@ -146,9 +166,8 @@ public class Player {
     }
 
     private void fire() {
-        int bx = x + ResourceMgr.badTankU.getWidth() / 2 - ResourceMgr.bulletU.getWidth() / 2;
-        int by = y + ResourceMgr.badTankU.getHeight() / 2 - ResourceMgr.bulletU.getHeight() / 2;
-        TankFrame.INSTANCE.add(new Bullet(bx, by, dir, group));
+        FireStrategy Strategy = new TwoDirFireStrategy();
+        Strategy.fire(this);
     }
 
     public void die() {
