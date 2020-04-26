@@ -3,7 +3,7 @@ package com.zfree.tank;
 import java.awt.*;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends AbstractGameObject{
     public static final int SPEED = 5;
     private int x, y;
     private int oldX, oldY;
@@ -23,7 +23,7 @@ public class Tank {
         this.height = ResourceMgr.badTankU.getHeight();
 
         oldX = x;
-        oldY= y;
+        oldY = y;
     }
 
     public Group getGroup() {
@@ -102,7 +102,9 @@ public class Tank {
         }
         randomDir();
 
-        if (r.nextInt(100) > 90) { fire(); }
+        if (r.nextInt(100) > 90) {
+            fire();
+        }
 
         boundsCheck();
     }
@@ -110,7 +112,9 @@ public class Tank {
     private Random r = new Random();
 
     private void randomDir() {
-        if (r.nextInt(100) > 90){ this.dir = Dir.randomDir(); }
+        if (r.nextInt(100) > 90) {
+            this.dir = Dir.randomDir();
+        }
     }
 
     private void boundsCheck() {

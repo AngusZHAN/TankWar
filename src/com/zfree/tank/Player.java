@@ -7,7 +7,7 @@ import com.zfree.tank.strategy.TwoDirFireStrategy;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class Player {
+public class Player extends AbstractGameObject {
     public static final int SPEED = 5;
     private int x, y;
     private Dir dir;
@@ -21,6 +21,8 @@ public class Player {
         this.y = y;
         this.dir = dir;
         this.group = group;
+        //init fire strategy from config file
+        this.initFireStrategy();
     }
 
     public Dir getDir() {
@@ -165,9 +167,20 @@ public class Player {
         setMainDir();
     }
 
+    private FireStrategy strategy = null;
+
+    private void initFireStrategy() {
+        String className = PropertyMgr.get("tankFireStrategy");
+        try {
+            Class clazz = Class.forName("com.zfree.tank.strategy." + className);
+            strategy = (FireStrategy)(clazz.getDeclaredConstructor().newInstance());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void fire() {
-        FireStrategy Strategy = new TwoDirFireStrategy();
-        Strategy.fire(this);
+        strategy.fire(this);
     }
 
     public void die() {
