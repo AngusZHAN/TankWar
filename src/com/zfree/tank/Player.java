@@ -41,6 +41,7 @@ public class Player extends AbstractGameObject {
         this.group = group;
     }
 
+    @Override
     public boolean isLive() {
         return live;
     }

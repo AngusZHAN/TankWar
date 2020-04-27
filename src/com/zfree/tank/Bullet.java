@@ -4,9 +4,12 @@ import java.awt.*;
 
 public class Bullet extends AbstractGameObject{
     private static final int SPEED = 7;
+    private static final int W = ResourceMgr.bulletU.getWidth();
+    private static final int H = ResourceMgr.bulletU.getHeight();
     private int x, y;
     private Dir dir;
     private Group group;
+    private Rectangle rect;
     private boolean live = true;
 
     public Bullet(int x, int y, Dir dir, Group group) {
@@ -14,8 +17,10 @@ public class Bullet extends AbstractGameObject{
         this.y = y;
         this.dir = dir;
         this.group = group;
+        this.rect = new Rectangle(x, y, W, H);
     }
 
+    @Override
     public boolean isLive() {
         return live;
     }
@@ -40,6 +45,9 @@ public class Bullet extends AbstractGameObject{
                 break;
         }
         move();
+
+        rect.x = x;
+        rect.y = y;
     }
 
     private void move() {
@@ -68,11 +76,11 @@ public class Bullet extends AbstractGameObject{
             return;
         }
 
-        Rectangle rect = new Rectangle(x, y, ResourceMgr.bulletU.getWidth(), ResourceMgr.bulletU.getHeight());
-        Rectangle rectTank = new Rectangle(tank.getX(), tank.getY(),
-                ResourceMgr.goodTankU.getWidth(), ResourceMgr.goodTankU.getHeight());
+//        Rectangle rect = new Rectangle(x, y, ResourceMgr.bulletU.getWidth(), ResourceMgr.bulletU.getHeight());
+//        Rectangle rectTank = new Rectangle(tank.getX(), tank.getY(),
+//                ResourceMgr.goodTankU.getWidth(), ResourceMgr.goodTankU.getHeight());
 
-        if (rect.intersects(rectTank)) {
+        if (rect.intersects(tank.getRect())) {
             this.die();
             tank.die();
             TankFrame.INSTANCE.add(new Explode(x, y));
@@ -81,6 +89,10 @@ public class Bullet extends AbstractGameObject{
 
     private void die() {
         this.setLive(false);
+    }
+
+    public Rectangle getRect() {
+        return rect;
     }
 
     private void boundsCheck() {

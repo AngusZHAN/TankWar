@@ -1,5 +1,8 @@
 package com.zfree.tank;
 
+import com.zfree.tank.chainofresponsibility.BulletTankCollider;
+import com.zfree.tank.chainofresponsibility.Collider;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -12,6 +15,7 @@ public class TankFrame extends Frame {
     public static final int GAME_HEIGHT = 800;
     Image offScreenImage = null;
     private Player myTank;
+    private Collider collider;
 
     List<AbstractGameObject> objects;
 
@@ -28,6 +32,7 @@ public class TankFrame extends Frame {
     private void initGameObjects() {
         myTank = new Player(800, 600, Dir.U, Group.Good);
         objects = new ArrayList<>();
+        //collider = new BulletTankCollider();
 
         int tankCount = Integer.parseInt(PropertyMgr.get("initTankCount"));
         for (int i = 0; i < tankCount; i++) {
@@ -55,12 +60,21 @@ public class TankFrame extends Frame {
     public void paint(Graphics g) {
         Color c = g.getColor();
         g.setColor(Color.WHITE);
-//        g.drawString("enemies:" + enemies.size(), 10, 50);
-//        g.drawString("bullets:" + bullets.size(), 10, 70);
+        g.drawString("objects:" + objects.size(), 10, 50);
         g.setColor(c);
 
         myTank.paint(g);
         for (int i = 0; i < objects.size(); i++) {
+            if (!objects.get(i).isLive()) {
+                objects.remove(i);
+                break;
+            }
+
+            AbstractGameObject go1 = objects.get(i);
+            for(int j=0; j<objects.size(); j++) {
+                AbstractGameObject go2 = objects.get(j);
+                collider.collide(go1, go2);
+            }
             objects.get(i).paint(g);
         }
     }

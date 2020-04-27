@@ -10,6 +10,7 @@ public class Tank extends AbstractGameObject{
     private int width, height;
     private Dir dir;
     private Group group;
+    private Rectangle rect;
     private boolean bL, bR, bU, bD;
     private boolean moving = true;
     private boolean live = true;
@@ -19,11 +20,14 @@ public class Tank extends AbstractGameObject{
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.width = ResourceMgr.badTankU.getWidth();
-        this.height = ResourceMgr.badTankU.getHeight();
 
         oldX = x;
         oldY = y;
+
+        this.width = ResourceMgr.badTankU.getWidth();
+        this.height = ResourceMgr.badTankU.getHeight();
+
+        this.rect = new Rectangle(x, y, width, height);
     }
 
     public Group getGroup() {
@@ -34,6 +38,7 @@ public class Tank extends AbstractGameObject{
         this.group = group;
     }
 
+    @Override
     public boolean isLive() {
         return live;
     }
@@ -136,5 +141,9 @@ public class Tank extends AbstractGameObject{
 
     public void die() {
         this.setLive(false);
+    }
+
+    public Rectangle getRect() {
+        return rect;
     }
 }

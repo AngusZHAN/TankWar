@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f9b80f1-d9d3-4251-9e4a-32d8a50cd283" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/AbstractGameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/chainofresponsibility/BulletTankCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zfree/tank/chainofresponsibility/Collider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Bullet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Explode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Explode.class" afterDir="false" />
@@ -12,13 +12,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/Tank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/TankFrame$TankKeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/TankFrame$TankKeyListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/com/zfree/tank/TankFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TankWar/config" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TankWar/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/AbstractGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/AbstractGameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Explode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +136,7 @@
       <workItem from="1587794769797" duration="791000" />
       <workItem from="1587876101911" duration="2713000" />
       <workItem from="1587890682842" duration="3045000" />
+      <workItem from="1587967659131" duration="3717000" />
     </task>
     <servers />
   </component>
@@ -168,34 +169,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="502" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1587707282425" />
-    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1587711453281">
+    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1587970790826">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587711453281" />
+    <state x="566" y="134" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587970790826" />
     <state x="605" y="141" key="#com.intellij.ide.util.MemberChooser/62.0.1474.864@62.0.1474.864" timestamp="1586848205112" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1587894439430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1587894439430" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1587895319349">
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1587972819886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587895319349" />
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587972819886" />
     <state width="1431" height="277" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1587895319348">
+    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1587972819886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587895319348" />
+    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587972819886" />
     <state width="1431" height="277" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1587895319348">
+    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1587972819886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587895319348" />
+    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587972819886" />
     <state width="1431" height="277" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1586935820124" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1587895319348">
+    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1587972819886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587895319348" />
+    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587972819886" />
     <state width="1431" height="277" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1586935820125" />
     <state width="1431" height="277" key="GridCell.Tab.1.bottom" timestamp="1586935820125">
       <screen x="62" y="0" width="1474" height="864" />
@@ -217,10 +218,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="262" y="53" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587019456132" />
-    <state x="428" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1587890682866">
+    <state x="428" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1587967661679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="428" y="244" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587890682866" />
+    <state x="428" y="244" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587967661679" />
     <state x="473" y="256" key="com.intellij.ide.util.TipDialog/62.0.1474.864@62.0.1474.864" timestamp="1586929946935" />
     <state x="485" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1587020281305">
       <screen x="0" y="0" width="1536" height="824" />

@@ -16,6 +16,7 @@ public class Explode extends AbstractGameObject{
         this.height = ResourceMgr.explodes[0].getHeight();
     }
 
+    @Override
     public boolean isLive() {
         return live;
     }
