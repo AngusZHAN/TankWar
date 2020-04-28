@@ -4,7 +4,6 @@ import java.awt.*;
 
 public class Wall extends AbstractGameObject {
     private int x, y, w, h;
-    private boolean live = true;
     private Rectangle rect;
 
     public Wall(int x, int y, int w, int h) {
@@ -23,8 +22,12 @@ public class Wall extends AbstractGameObject {
         g.setColor(c);
     }
 
+    public Rectangle getRect() {
+        return rect;
+    }
+
     @Override
     public boolean isLive() {
-        return live;
+        return true;
     }
 }

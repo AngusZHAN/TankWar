@@ -3,7 +3,7 @@ package com.zfree.tank;
 import java.awt.*;
 import java.util.Random;
 
-public class Tank extends AbstractGameObject{
+public class Tank extends AbstractGameObject {
     public static final int SPEED = 5;
     private int x, y;
     private int oldX, oldY;
@@ -82,6 +82,9 @@ public class Tank extends AbstractGameObject{
                 break;
         }
         move();
+
+        rect.x = x;
+        rect.y = y;
     }
 
     private void move() {
@@ -141,6 +144,7 @@ public class Tank extends AbstractGameObject{
 
     public void die() {
         this.setLive(false);
+        TankFrame.INSTANCE.add(new Explode(x, y));
     }
 
     public Rectangle getRect() {

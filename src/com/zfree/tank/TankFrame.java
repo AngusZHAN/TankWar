@@ -1,6 +1,7 @@
 package com.zfree.tank;
 
 import com.zfree.tank.chainofresponsibility.BulletTankCollider;
+import com.zfree.tank.chainofresponsibility.BulletWallCollider;
 import com.zfree.tank.chainofresponsibility.Collider;
 
 import java.awt.*;
@@ -14,10 +15,10 @@ public class TankFrame extends Frame {
     public static final int GAME_WIDTH = 1000;
     public static final int GAME_HEIGHT = 800;
     Image offScreenImage = null;
-    private Player myTank;
-    private Collider collider;
-
     List<AbstractGameObject> objects;
+    Collider collider = new BulletTankCollider();
+    Collider collider2 = new BulletWallCollider();
+    private Player myTank;
 
     private TankFrame() {
         this.setTitle("com.zfree.tank.Tank War");
@@ -32,7 +33,6 @@ public class TankFrame extends Frame {
     private void initGameObjects() {
         myTank = new Player(800, 600, Dir.U, Group.Good);
         objects = new ArrayList<>();
-        //collider = new BulletTankCollider();
 
         int tankCount = Integer.parseInt(PropertyMgr.get("initTankCount"));
         for (int i = 0; i < tankCount; i++) {
@@ -56,6 +56,10 @@ public class TankFrame extends Frame {
         g.drawImage(offScreenImage, 0, 0, null);
     }
 
+    public void add(AbstractGameObject go) {
+        objects.add(go);
+    }
+
     @Override
     public void paint(Graphics g) {
         Color c = g.getColor();
@@ -69,19 +73,14 @@ public class TankFrame extends Frame {
                 objects.remove(i);
                 break;
             }
-
             AbstractGameObject go1 = objects.get(i);
-            for(int j=0; j<objects.size(); j++) {
+            for (int j = 0; j < objects.size(); j++) {
                 AbstractGameObject go2 = objects.get(j);
                 collider.collide(go1, go2);
+                collider2.collide(go1, go2);
             }
             objects.get(i).paint(g);
         }
-    }
-
-
-    public void add(AbstractGameObject go) {
-        objects.add(go);
     }
 
     private class TankKeyListener extends KeyAdapter {

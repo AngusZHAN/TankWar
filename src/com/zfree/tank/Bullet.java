@@ -2,7 +2,7 @@ package com.zfree.tank;
 
 import java.awt.*;
 
-public class Bullet extends AbstractGameObject{
+public class Bullet extends AbstractGameObject {
     private static final int SPEED = 7;
     private static final int W = ResourceMgr.bulletU.getWidth();
     private static final int H = ResourceMgr.bulletU.getHeight();
@@ -76,14 +76,9 @@ public class Bullet extends AbstractGameObject{
             return;
         }
 
-//        Rectangle rect = new Rectangle(x, y, ResourceMgr.bulletU.getWidth(), ResourceMgr.bulletU.getHeight());
-//        Rectangle rectTank = new Rectangle(tank.getX(), tank.getY(),
-//                ResourceMgr.goodTankU.getWidth(), ResourceMgr.goodTankU.getHeight());
-
-        if (rect.intersects(tank.getRect())) {
+        if (this.rect.intersects(tank.getRect())) {
             this.die();
             tank.die();
-            TankFrame.INSTANCE.add(new Explode(x, y));
         }
     }
 

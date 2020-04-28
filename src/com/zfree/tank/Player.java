@@ -9,18 +9,25 @@ import java.awt.event.KeyEvent;
 
 public class Player extends AbstractGameObject {
     public static final int SPEED = 5;
+    private int width, height;
     private int x, y;
     private Dir dir;
     private Group group;
+    private Rectangle rect;
     private boolean bL, bR, bU, bD;
     private boolean moving = false;
     private boolean live = true;
+    private FireStrategy strategy = null;
 
     public Player(int x, int y, Dir dir, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
+        this.width = ResourceMgr.goodTankU.getWidth();
+        this.height = ResourceMgr.goodTankU.getHeight();
+
+        this.rect = new Rectangle(x, y, width, height);
         //init fire strategy from config file
         this.initFireStrategy();
     }
@@ -85,6 +92,9 @@ public class Player extends AbstractGameObject {
                 break;
         }
         move();
+
+        rect.x = x;
+        rect.y = y;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -114,11 +124,14 @@ public class Player extends AbstractGameObject {
             moving = true;
             if (bL && !bR && !bU && !bD) {
                 dir = Dir.L;
-            } else if (!bL && bR && !bU && !bD) {
+            }
+            if (!bL && bR && !bU && !bD) {
                 dir = Dir.R;
-            } else if (!bL && !bR && bU && !bD) {
+            }
+            if (!bL && !bR && bU && !bD) {
                 dir = Dir.U;
-            } else if (!bL && !bR && !bU && bD) {
+            }
+            if (!bL && !bR && !bU && bD) {
                 dir = Dir.D;
             }
         }
@@ -168,13 +181,11 @@ public class Player extends AbstractGameObject {
         setMainDir();
     }
 
-    private FireStrategy strategy = null;
-
     private void initFireStrategy() {
         String className = PropertyMgr.get("tankFireStrategy");
         try {
             Class clazz = Class.forName("com.zfree.tank.strategy." + className);
-            strategy = (FireStrategy)(clazz.getDeclaredConstructor().newInstance());
+            strategy = (FireStrategy) (clazz.getDeclaredConstructor().newInstance());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -186,5 +197,9 @@ public class Player extends AbstractGameObject {
 
     public void die() {
         this.setLive(false);
+    }
+
+    public Rectangle getRect() {
+        return rect;
     }
 }
