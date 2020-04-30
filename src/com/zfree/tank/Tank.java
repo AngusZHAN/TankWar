@@ -131,7 +131,7 @@ public class Tank extends AbstractGameObject {
         }
     }
 
-    private void back() {
+    public void back() {
         x = oldX;
         y = oldY;
     }

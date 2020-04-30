@@ -1,8 +1,7 @@
 package com.zfree.tank;
 
-import com.zfree.tank.chainofresponsibility.BulletTankCollider;
-import com.zfree.tank.chainofresponsibility.BulletWallCollider;
 import com.zfree.tank.chainofresponsibility.Collider;
+import com.zfree.tank.chainofresponsibility.ColliderChain;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -16,9 +15,9 @@ public class TankFrame extends Frame {
     public static final int GAME_HEIGHT = 800;
     Image offScreenImage = null;
     List<AbstractGameObject> objects;
-    Collider collider = new BulletTankCollider();
-    Collider collider2 = new BulletWallCollider();
     private Player myTank;
+
+    ColliderChain chain = new ColliderChain();
 
     private TankFrame() {
         this.setTitle("com.zfree.tank.Tank War");
@@ -28,6 +27,7 @@ public class TankFrame extends Frame {
         this.addKeyListener(new TankKeyListener());
 
         initGameObjects();
+
     }
 
     private void initGameObjects() {
@@ -41,6 +41,7 @@ public class TankFrame extends Frame {
 
         this.add(new Wall(300, 200, 100, 10));
     }
+
 
     @Override
     public void update(Graphics g) {
@@ -76,8 +77,7 @@ public class TankFrame extends Frame {
             AbstractGameObject go1 = objects.get(i);
             for (int j = 0; j < objects.size(); j++) {
                 AbstractGameObject go2 = objects.get(j);
-                collider.collide(go1, go2);
-                collider2.collide(go1, go2);
+                chain.collide(go1, go2);
             }
             objects.get(i).paint(g);
         }
