@@ -2,4 +2,4 @@ initTankCount=7
 
 #tank fire strategy
 tankFireStrategy = DefualtFireStrategy
-colliders = BulletTankCollider,BulletWallCollider,TankWallCollider
+colliders = BulletTankCollider,BulletWallCollider,TankWallCollider,TanksCollider

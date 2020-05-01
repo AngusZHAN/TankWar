@@ -20,6 +20,14 @@ public class Bullet extends AbstractGameObject {
         this.rect = new Rectangle(x, y, W, H);
     }
 
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
     @Override
     public boolean isLive() {
         return live;
@@ -68,21 +76,7 @@ public class Bullet extends AbstractGameObject {
         boundsCheck();
     }
 
-    public void collidesWithTank(Tank tank) {
-        if (!this.isLive() || !tank.isLive()) {
-            return;
-        }
-        if (this.group == tank.getGroup()) {
-            return;
-        }
-
-        if (this.rect.intersects(tank.getRect())) {
-            this.die();
-            tank.die();
-        }
-    }
-
-    private void die() {
+    public void die() {
         this.setLive(false);
     }
 

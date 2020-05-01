@@ -1,23 +1,16 @@
 package com.zfree.tank;
 
-import com.zfree.tank.chainofresponsibility.Collider;
-import com.zfree.tank.chainofresponsibility.ColliderChain;
-
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TankFrame extends Frame {
     public static final TankFrame INSTANCE = new TankFrame();
     public static final int GAME_WIDTH = 1000;
     public static final int GAME_HEIGHT = 800;
     Image offScreenImage = null;
-    List<AbstractGameObject> objects;
-    private Player myTank;
 
-    ColliderChain chain = new ColliderChain();
+    private GameModel gameModel = new GameModel();
 
     private TankFrame() {
         this.setTitle("com.zfree.tank.Tank War");
@@ -25,23 +18,7 @@ public class TankFrame extends Frame {
         this.setSize(GAME_WIDTH, GAME_HEIGHT);
 
         this.addKeyListener(new TankKeyListener());
-
-        initGameObjects();
-
     }
-
-    private void initGameObjects() {
-        myTank = new Player(800, 600, Dir.U, Group.Good);
-        objects = new ArrayList<>();
-
-        int tankCount = Integer.parseInt(PropertyMgr.get("initTankCount"));
-        for (int i = 0; i < tankCount; i++) {
-            this.add(new Tank(100 + 30 * i, 200, Dir.D, Group.Bad));
-        }
-
-        this.add(new Wall(300, 200, 100, 10));
-    }
-
 
     @Override
     public void update(Graphics g) {
@@ -57,42 +34,25 @@ public class TankFrame extends Frame {
         g.drawImage(offScreenImage, 0, 0, null);
     }
 
-    public void add(AbstractGameObject go) {
-        objects.add(go);
-    }
-
     @Override
     public void paint(Graphics g) {
-        Color c = g.getColor();
-        g.setColor(Color.WHITE);
-        g.drawString("objects:" + objects.size(), 10, 50);
-        g.setColor(c);
+        gameModel.paint(g);
+    }
 
-        myTank.paint(g);
-        for (int i = 0; i < objects.size(); i++) {
-            if (!objects.get(i).isLive()) {
-                objects.remove(i);
-                break;
-            }
-            AbstractGameObject go1 = objects.get(i);
-            for (int j = 0; j < objects.size(); j++) {
-                AbstractGameObject go2 = objects.get(j);
-                chain.collide(go1, go2);
-            }
-            objects.get(i).paint(g);
-        }
+    public GameModel getGameModel (){
+        return this.gameModel;
     }
 
     private class TankKeyListener extends KeyAdapter {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            myTank.keyPressed(e);
+            gameModel.getMyTank().keyPressed(e);
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-            myTank.keyReleased(e);
+            gameModel.getMyTank().keyReleased(e);
         }
     }
 }

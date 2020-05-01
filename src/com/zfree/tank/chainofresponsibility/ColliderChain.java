@@ -6,7 +6,7 @@ import com.zfree.tank.PropertyMgr;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColliderChain implements Collider{
+public class ColliderChain implements Collider {
     private List<Collider> colliders;
 
     public ColliderChain() {
@@ -27,9 +27,12 @@ public class ColliderChain implements Collider{
         }
     }
 
-    public void collide(AbstractGameObject go1, AbstractGameObject go2) {
+    public boolean collide(AbstractGameObject go1, AbstractGameObject go2) {
         for (Collider collider : colliders) {
-            collider.collide(go1, go2);
+            if (!collider.collide(go1, go2)) {
+                return false;
+            }
         }
+        return true;
     }
 }
