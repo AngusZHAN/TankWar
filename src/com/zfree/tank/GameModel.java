@@ -3,10 +3,11 @@ package com.zfree.tank;
 import com.zfree.tank.chainofresponsibility.ColliderChain;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameModel {
+public class GameModel implements Serializable {
     List<AbstractGameObject> objects;
     ColliderChain chain = new ColliderChain();
     private Player myTank;
@@ -42,7 +43,7 @@ public class GameModel {
         g.setColor(c);
 
         myTank.paint(g);
-        
+
         for (int i = 0; i < objects.size(); i++) {
             AbstractGameObject object = objects.get(i);
             if (!object.isLive()) {

@@ -3,6 +3,7 @@ package com.zfree.tank;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.*;
 
 public class TankFrame extends Frame {
     public static final TankFrame INSTANCE = new TankFrame();
@@ -39,7 +40,7 @@ public class TankFrame extends Frame {
         gameModel.paint(g);
     }
 
-    public GameModel getGameModel (){
+    public GameModel getGameModel() {
         return this.gameModel;
     }
 
@@ -47,12 +48,52 @@ public class TankFrame extends Frame {
 
         @Override
         public void keyPressed(KeyEvent e) {
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_S) {
+                save();
+            } else if (key == KeyEvent.VK_L) {
+                load();
+            }
             gameModel.getMyTank().keyPressed(e);
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             gameModel.getMyTank().keyReleased(e);
+        }
+    }
+
+    private void save() {
+        ObjectOutputStream oos = null;
+        try {
+            File f = new File("D:/Code/test/tank.dat");
+            FileOutputStream fos = new FileOutputStream(f);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(gameModel);
+            oos.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void load() {
+        try {
+            File f = new File("D:/Code/test/tank.dat");
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.gameModel = (GameModel) (ois.readObject());
+
+            ois.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
