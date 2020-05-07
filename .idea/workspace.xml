@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f9b80f1-d9d3-4251-9e4a-32d8a50cd283" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/SerializeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zfree/tank/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zfree/tank/GameModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,7 @@
       <workItem from="1588226994414" duration="5245000" />
       <workItem from="1588313308396" duration="4730000" />
       <workItem from="1588401946312" duration="1548000" />
-      <workItem from="1588831674667" duration="223000" />
+      <workItem from="1588831674667" duration="533000" />
     </task>
     <servers />
   </component>

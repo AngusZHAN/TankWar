@@ -42,11 +42,16 @@ public class GameModel {
         g.setColor(c);
 
         myTank.paint(g);
+        
         for (int i = 0; i < objects.size(); i++) {
-            if (!objects.get(i).isLive()) {
+            AbstractGameObject object = objects.get(i);
+            if (!object.isLive()) {
                 objects.remove(i);
                 break;
             }
+        }
+
+        for (int i = 0; i < objects.size(); i++) {
             AbstractGameObject go1 = objects.get(i);
             for (int j = 0; j < objects.size(); j++) {
                 AbstractGameObject go2 = objects.get(j);
